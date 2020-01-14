@@ -152,6 +152,8 @@
 
           document.body.append(sucessMessage)
 
+          Array.from(testForm.querySelectorAll('input')).map(input => input.value = '')
+
           setTimeout(() => {
 
             var body = document.querySelector('body');
