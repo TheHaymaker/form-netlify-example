@@ -145,15 +145,19 @@
         .then(res => {
           if (res) {
             var successMessage = document.createElement('p')
+            success.setAttribute('id', 'success')
             successMessage.innerText = 'Thanks for the message!'
             
             document.body.append(sucessMessage)
 
             // clear all the input fields on success
-            Array.from(testForm.querySelectorAll('input')).map(input => input.value = '')
+            Array.from(testForm.querySelectorAll('input')).map(input => {
+              input.value = ''
+            })
             setTimeout(() => {
               const body = document.querySelector('body');
-              body.removeChild(successMessage);
+              const success = document.querySelector('#success')
+              body.removeChild(success);
             }, 4000)
           }
 
